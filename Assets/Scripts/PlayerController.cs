@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     private SpriteRenderer _render;
     private Animator _animator;
+
+    private GroundSensor _sensor;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start ()
     {
@@ -30,6 +32,8 @@ public class PlayerController : MonoBehaviour
 
         _moveAction = InputSystem.actions["Move"];
         _jumpAction = InputSystem.actions["Jump"];
+
+        _sensor = GetComponentInChildren<GroundSensor>();
     
     }
 
@@ -39,6 +43,13 @@ public class PlayerController : MonoBehaviour
         _moveDirection = _moveAction.ReadValue<Vector2>();
         rigidbody2D.linearVelocity = new Vector2(_moveDirection.x * movementSpeed, rigidbody2D.linearVelocity.y);
 
+
+        if (_jumpAction.WasPressedThisFrame() && _sensor.isGrounded)
+        {
+            rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            
+            
+        }
     
     }
 }

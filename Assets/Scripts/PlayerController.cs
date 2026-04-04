@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     {
         _moveDirection = _moveAction.ReadValue<Vector2>();
         rigidbody2D.linearVelocity = new Vector2(_moveDirection.x * movementSpeed, rigidbody2D.linearVelocity.y);
+
+
+        
     
     }
 }

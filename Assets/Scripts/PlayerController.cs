@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
             
             
         }
+        _animator.SetBool("IsJumping", !_sensor.isGrounded);
 
         if (_moveDirection.x > 0)
         {

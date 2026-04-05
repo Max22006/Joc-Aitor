@@ -3081,9 +3081,9 @@ GameObject:
   - component: {fileID: 193550864}
   - component: {fileID: 193550863}
   - component: {fileID: 193550862}
-  - component: {fileID: 193550861}
   - component: {fileID: 193550860}
   - component: {fileID: 193550865}
+  - component: {fileID: 193550866}
   m_Layer: 6
   m_Name: Coco
   m_TagString: Untagged
@@ -3105,25 +3105,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   startPosition: {x: -6.613, y: 1.144, z: 0}
   movementSpeed: 5
-  jumpForce: 10
+  jumpForce: 8
   direction: 1
   rigidbody2D: {fileID: 0}
---- !u!111 &193550861
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193550859}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!50 &193550862
 Rigidbody2D:
   serializedVersion: 5
@@ -3272,6 +3256,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.69889736, y: 0.91317654}
   m_EdgeRadius: 0
+--- !u!95 &193550866
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193550859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ec1bef173d099d4f862ce3344723b33, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &203155041
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,6 +50,21 @@ public class PlayerController : MonoBehaviour
             
             
         }
+
+        if (_moveDirection.x > 0)
+        {
+            _render.flipX = false;
+            _animator.SetBool("IsWalking", true);
+        }
+        else if (_moveDirection.x < 0)
+        {
+            _render.flipX = true;
+            _animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            _animator.SetBool("IsWalking", false);
+        }
     
     }
 }

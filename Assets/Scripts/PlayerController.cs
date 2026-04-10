@@ -54,12 +54,12 @@ public class PlayerController : MonoBehaviour
 
         if (_moveDirection.x > 0)
         {
-            _render.flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             _animator.SetBool("IsWalking", true);
         }
         else if (_moveDirection.x < 0)
         {
-            _render.flipX = true;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             _animator.SetBool("IsWalking", true);
         }
         else

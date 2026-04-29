@@ -4,10 +4,11 @@ public class SensorEnemy : MonoBehaviour
 {
 
     public bool isCollision;
+    private Animator _animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        _animator = GameObject.Find("Coco").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,7 +24,8 @@ public class SensorEnemy : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject, 1.5f);
+            _animator.SetBool("IsDeath", true);
+            Destroy(collision.gameObject, 1.2f);
         }
     }
     void OnTriggerStay2D(Collider2D collision)

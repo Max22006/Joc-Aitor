@@ -30,5 +30,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
         //LoadSceneAsync
     }
-    
+    public IEnumerator DelayVictory()
+    {
+        
+        yield return new WaitForSeconds(1.5f);
+        victoryCanvas.SetActive(true);
+        
+    }
 }

@@ -66,4 +66,5 @@ public class CucarachaController : MonoBehaviour
         movementSpeed = 0;
        _boxCollider.enabled = false;
     }
+    
 }

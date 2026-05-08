@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CucarachaController : MonoBehaviour
 {
@@ -7,8 +8,6 @@ public class CucarachaController : MonoBehaviour
     private BoxCollider2D _boxCollider;
     public float movementSpeed = 2f;
     public int direction = 1;
-    private int _cucarachaHealth = 3;
-
     public SensorEnemy sensor;
     private Transform _playerPosition;
     public float detectionRange = 2;
@@ -74,7 +73,7 @@ public class CucarachaController : MonoBehaviour
         _cucarachaHealth -= damage;
         _healthSlider.value = _cucarachaHealth;
 
-        rigidbody2D.AddForce(impactDirection * impactForce, ForceMode2D.Impulse);
+        GetComponent<Rigidbody2D>().AddForce(impactDirection * impactForce, ForceMode2D.Impulse);
 
         if (_cucarachaHealth <= 0)
         {

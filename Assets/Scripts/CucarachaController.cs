@@ -12,13 +12,22 @@ public class CucarachaController : MonoBehaviour
     public SensorEnemy sensor;
     private Transform _playerPosition;
     public float detectionRange = 2;
+
+    private Slider _healthSlider;
+    private int _cucarachaHealth = 3;
     void Awake()
     {
         _rbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _playerPosition = GameObject.FindGameObjectWithTag("Player").transform; 
+        _healthSlider = GetComponentInChildren<Slider>();
 
+    }
+    void Start()
+    {
+        _healthSlider.maxValue = _cucarachaHealth;
+        _healthSlider.value = _cucarachaHealth;
     }
 
     // Update is called once per frame
@@ -59,6 +68,19 @@ public class CucarachaController : MonoBehaviour
         _rbody.linearVelocity = new Vector2(direction * movementSpeed, _rbody.linearVelocity.y);
 
         
+    }
+    public void TakeDamage(int damage, Vector3 impactDirection, float impactForce)
+    {
+        _cucarachaHealth -= damage;
+        _healthSlider.value = _cucarachaHealth;
+
+        rigidbody2D.AddForce(impactDirection * impactForce, ForceMode2D.Impulse);
+
+        if (_cucarachaHealth <= 0)
+        {
+            CucarachaDeath();
+        }
+
     }
     public void CucarachaDeath()
     {

@@ -1,0 +1,36 @@
+using UnityEngine;
+
+public class Bala : MonoBehaviour
+{
+    private Rigidbody2D _rBody2;
+    public float bulletSpeed = 10;
+
+    public int bulletDamage = 1;
+    public float bulletImpactForce = 10;
+    void Awake()
+    {
+        _rBody2 = GetComponent<Rigidbody2D>();
+    }
+    void Start()
+    {
+        _rBody2.AddForce(transform.right * bulletSpeed, ForceMode2D.Impulse);
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Coin"))
+        {
+            return;
+        } 
+        if (collision.gameObject.layer == 7)
+        {
+          CucarachaController _enemyScript = collision.gameObject.GetComponent<CucarachaController>();
+          _enemyScript.TakeDamage(bulletDamage, transform.right, bulletImpactForce);
+        }
+          Destroy(gameObject);
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

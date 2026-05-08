@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-    private bool _canShoot = false;
+    private bool _canShoot = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start ()
     {
@@ -75,8 +75,7 @@ public class PlayerController : MonoBehaviour
         if (_attackAction.WasPressedThisFrame() && _canShoot)
         {
            Shoot();
-           // Attack();
-           //animator.SetTrigger("Attack");
+           
         }
     }
     void Shoot()

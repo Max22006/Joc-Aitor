@@ -24,6 +24,7 @@ public class Bala : MonoBehaviour
         if (collision.gameObject.layer == 7)
         {
           CucarachaController _enemyScript = collision.gameObject.GetComponent<CucarachaController>();
+          
           _enemyScript.TakeDamage(bulletDamage, transform.right, bulletImpactForce);
         }
           Destroy(gameObject);

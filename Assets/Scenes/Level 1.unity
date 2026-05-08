@@ -8521,7 +8521,7 @@ GameObject:
   - component: {fileID: 640910105}
   - component: {fileID: 640910104}
   - component: {fileID: 640910103}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10108,7 +10108,7 @@ GameObject:
   - component: {fileID: 719949870}
   - component: {fileID: 719949872}
   - component: {fileID: 719949871}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12181,7 +12181,7 @@ GameObject:
   - component: {fileID: 902032213}
   - component: {fileID: 902032215}
   - component: {fileID: 902032214}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14889,7 +14889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1086135256}
   - component: {fileID: 1086135257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16817,7 +16817,7 @@ GameObject:
   - component: {fileID: 1280184748}
   - component: {fileID: 1280184747}
   - component: {fileID: 1280184746}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cucaracha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21210,7 +21210,7 @@ GameObject:
   - component: {fileID: 1667010659}
   - component: {fileID: 1667010660}
   - component: {fileID: 1667010661}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26126,7 +26126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021477796}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

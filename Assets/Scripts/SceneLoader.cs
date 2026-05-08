@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -8,6 +9,16 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
         //LoadSceneAsync
+    }
+    public void ExitGame()
+    {
+        #if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+
+
+        #else
+        Application.Quit();
+        #endif
     }
     
 }

@@ -30,4 +30,5 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
         //LoadSceneAsync
     }
+    
 }

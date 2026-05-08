@@ -33,8 +33,15 @@ public class GameManager : MonoBehaviour
     public IEnumerator DelayVictory()
     {
         
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         victoryCanvas.SetActive(true);
+        
+    }
+     public IEnumerator DelayScene()
+    {
+        
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Game Over");
         
     }
 }

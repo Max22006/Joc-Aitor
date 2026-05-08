@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private InputAction _moveAction;
     private Vector2 _moveDirection;
     private InputAction _jumpAction;
+    private InputAction _attackAction;
 
     public Rigidbody2D rigidbody2D;
 
@@ -19,6 +20,10 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
 
     private GroundSensor _sensor;
+
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+    private bool _canShoot = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start ()
     {
@@ -32,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
         _moveAction = InputSystem.actions["Move"];
         _jumpAction = InputSystem.actions["Jump"];
+        _attackAction = InputSystem.actions["Attack"];
 
         _sensor = GetComponentInChildren<GroundSensor>();
     
@@ -66,6 +72,15 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool("IsWalking", false);
         }
-    
+        if (_attackAction.WasPressedThisFrame() && _canShoot)
+        {
+           Shoot();
+           // Attack();
+           //animator.SetTrigger("Attack");
+        }
+    }
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
     }
 }
